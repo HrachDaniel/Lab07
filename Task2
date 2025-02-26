@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Анкета</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+    <h2 align="center">Анкета</h2>
+
+    <form id="anketaForm">
+        
+            <tr>
+                <th>1. Прізвище</th>
+                <td><input type="text" id="lastName" name="lastName"></td>
+            </tr>
+            <tr>
+                <th>2. Ім'я, по батькові</th>
+                <td><input type="text" id="fullName" name="fullName"></td>
+            </tr>
+            <tr>
+                <th>3. Число і рік народження</th>
+                <td><input type="date" id="birthDate" name="birthDate"></td>
+            </tr>
+            <tr>
+                <th>4. Домашня адреса</th>
+                <td><input type="text" id="address" name="address"></td>
+            </tr>
+            <tr>
+                <th>5. Місце навчання (роботи)</th>
+                <td><input type="text" id="workPlace" name="workPlace"></td>
+            </tr>
+            <tr>
+                <th>6. Домашній (робочий) телефон</th>
+                <td><input type="tel" id="phone" name="phone"></td>
+            </tr>
+            <tr>
+                <th>7. E-mail</th>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <th>8. Область наукових інтересів</th>
+                <td>
+                    <textarea id="interests" name="interests" rows="6" cols="50"></textarea>
+                </td>
+            </tr>
+        </table><br>
+
+        <button type="button" onclick="resetForm()">Відмінити введення</button><br><br>
+        <button type="submit">Надіслати дані та перейти до 2 етапу реєстрації</button>
+        
+</form>
+
+    <script>
+        function resetForm() {
+            document.getElementById("anketaForm").reset();
+        }
+
+        document.getElementById("anketaForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Запобігаємо стандартній поведінці форми
+
+            let lastName = document.getElementById("lastName").value;
+            let fullName = document.getElementById("fullName").value;
+            let birthDate = document.getElementById("birthDate").value;
+            let address = document.getElementById("address").value;
+            let workPlace = document.getElementById("workPlace").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let interests = document.getElementById("interests").value;
+
+            console.log("Прізвище: " + lastName);
+            console.log("Ім'я, по батькові: " + fullName);
+            console.log("Дата народження: " + birthDate);
+            console.log("Адреса: " + address);
+            console.log("Місце навчання/роботи: " + workPlace);
+            console.log("Телефон: " + phone);
+            console.log("E-mail: " + email);
+            console.log("Область інтересів: " + interests);
+
+            // Тут можна додати код для переходу до 2 етапу реєстрації
+        });
+    </script>
+
+</body>
+</html>
