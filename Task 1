@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма з різними елементами</title>
+</head>
+<body>
+
+    <h2 align="center">Форма з усіма елементами</h2>
+
+    <form id="myForm">
+        Ім'я:<br>
+        <input type="text" id="name" name="name"><br><br>
+
+        Електронна пошта:<br>
+        <input type="email" id="email" name="email"><br><br>
+
+        Пароль:<br>
+        <input type="password" id="password" name="password"><br><br>
+
+        Дата народження:<br>
+        <input type="date" id="date" name="date"><br><br>
+
+        Які дисципліни ви вивчаєте на курсі?<br> 
+        <input type="checkbox" id="disc"name="web" value="yes" checked> WEB-програмування<br> 
+        <input type="checkbox" name="eldinam" value="yes"> Технічна електродинаміка<br><br>
+
+        Курс:<br>
+        <select name="curs" id="curs" size="1">
+                <option value="1" selected>Перший</option>
+                <option value="2" selected>Другий</option>
+                <option value="3" selected>Третій</option>
+                <option value="4" selected>Четвертий</option>
+                <option value="5" selected>П'ятий</option>
+        </select><br><br>
+
+        Завантажити файл:<br>
+        <input type="file" id="file" name="file"><br><br>
+
+        Ваша стать:<br>
+        <input type="radio" id="male" name="gender" value="male">
+        Чоловіча<br>
+        <input type="radio" id="female" name="gender" value="female">
+        Жіноча<br><br>
+
+        Коментарі:<br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <input type="button" value="Дата" onclick="alert(Date());"><br>
+        <label for="agree">
+            <input type="checkbox" id="agree" name="agree" value="agree">
+            Я погоджуюсь з умовами
+        </label><br><br>
+
+        <input type="reset" value="Скасувати ввод"><br>
+        <input type="submit" value="Відправити дані">
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Запобігаємо стандартній поведінці форми
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let date = document.getElementById("date").value;
+            let disc = document.getElementById("disc").value;
+            let curs = document.getElementById("curs").value;
+            let file = document.getElementById("file").value;
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+            let comments = document.getElementById("comments").value;
+            let agree = document.getElementById("agree").checked;
+
+            console.log("Ім'я: " + name);
+            console.log("Електронна пошта: " + email);
+            console.log("Пароль: " + password);
+            console.log("Дата народження: " + date);
+            console.log("Дисципліни: " + disc);
+            console.log("Курс: " + curs);
+            console.log("Файл: " + file);
+            console.log("Стать: " + gender);
+            console.log("Коментарі: " + comments);
+            console.log("Погоджено: " + agree);
+        });
+    </script>
+
+</body>
+</html>
