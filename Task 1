@@ -47,6 +47,7 @@
         <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
 
         <input type="button" value="Дата" onclick="alert(Date());"><br>
+        <input type="date" id="date1" name="date1"><br><br>
         <label for="agree">
             <input type="checkbox" id="agree" name="agree" value="agree">
             Я погоджуюсь з умовами
