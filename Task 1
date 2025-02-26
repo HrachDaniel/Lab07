@@ -53,7 +53,7 @@
             Я погоджуюсь з умовами
         </label><br><br>
 
-        <input type="reset" value="Скасувати ввод"><br>
+        <input type="reset" value="Відмінити введення"><br>
         <input type="submit" value="Відправити дані">
     </form>
 
